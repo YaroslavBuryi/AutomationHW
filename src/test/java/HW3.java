@@ -7,7 +7,6 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.List;
 public class HW3 extends BaseTest {
-
     @Test
     public void retrieveSearchResultData() {
         String searchValue = "тумба";
@@ -22,9 +21,9 @@ public class HW3 extends BaseTest {
         searchResults.get(0).click();
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='search-result-card__description']")));
         WebElement nameElement = webDriver.findElement(By.xpath("//div[@class='search-result-card__title']"));
-        WebElement costElement = webDriver.findElement(By.xpath("//div[@class='search-result-card__cost']"));
-        WebElement statusElement = webDriver.findElement(By.xpath("//div[@class='search-result-card__status']"));
-        WebElement companyElement = webDriver.findElement(By.xpath("//div[@class='search-result-card__company']"));
+        WebElement costElement = webDriver.findElement(By.xpath("//p[@class='c_success app-price__amount']"));
+        WebElement statusElement = webDriver.findElement(By.xpath("//span[@class='marked']"));
+        WebElement companyElement = webDriver.findElement(By.xpath("//div[@class='search-result-card__description']"));
         String name = nameElement.getText().trim();
         String cost = costElement.getText().trim();
         String status = statusElement.getText().trim();
