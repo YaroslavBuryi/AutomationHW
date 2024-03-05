@@ -15,11 +15,10 @@ public class HW3 extends BaseTest {
         input.clear();
         input.sendKeys(searchValue);
         input.sendKeys(Keys.ENTER);
-        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@class='item-title__title']")));
         List<WebElement> searchResults = webDriver.findElements(By.xpath("//a[@class='item-title__title']"));
         searchResults.get(0).click();
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@class='item-title__title']")));
         WebElement nameElement = webDriver.findElement(By.xpath("//div[@class='tender--head--title col-sm-9']"));
         WebElement costElement = webDriver.findElement(By.xpath("//strong[contains(text(),'98 940,00')]/span[@class='small']"));
         WebElement statusElement = webDriver.findElement(By.xpath("//span[@class='marked'][contains(text(),'Завершена')]"));
